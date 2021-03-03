@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>狂拍灰太狼</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*开始游戏界面*/
+        .container {
+            width: 320px;
+            height: 480px;
+            margin: 50px auto;
+            background: url("images/game_bg.jpg");
+            position: relative;
+        }
+
+        .container > h1 {
+            color: white;
+            position: absolute;
+            top: -5px;
+            left: 60px;
+        }
+
+        .container > .start {
+            width: 150px;
+            height: 40px;
+            border-radius: 30px;
+            font-size: 20px;
+            text-align: center;
+            background: linear-gradient(orange, red);
+            border: none;
+            color: white;
+            outline: none;
+            position: absolute;
+            top: 310px;
+            left: 80px;
+        }
+
+        .container > p {
+            width: 320px;
+            height: 20px;
+            text-align: center; /*先设置宽高再设置文本居中*/
+            font-size: 16px;
+            font-weight: bold;
+            background: #cccccc;
+            position: absolute;
+            /*top: 460px;*/
+            bottom: 0;
+            /*left: 110px;*/
+        }
+
+        .container > .progress {
+            width: 180px;
+            height: 16px;
+            background: url("images/progress.png") no-repeat 0 0;
+            position: absolute;
+            top: 67px;
+            left: 63px;
+        }
+
+
+        /*游戏规则界面*/
+        .container > .rule {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            text-align: center;
+            padding-top: 50px;
+            display: none;
+        }
+
+        .rule > p {
+            margin: 35px auto;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .rule > a {
+            color: red;
+        }
+
+
+        /*游戏结束界面*/
+        .container > .mask {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding-top: 200px;
+            display: none;
+        }
+
+        .mask > h1 {
+            color: #ff8140;
+            text-align: center;
+            text-shadow: 3px 3px 0 white;
+        }
+
+        .mask > .reStart {
+            width: 150px;
+            height: 40px;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(cornflowerblue,dodgerblue);
+            border: none;
+            text-align: center;
+            outline: none;
+            position: absolute;
+            top: 310px;
+            left: 80px;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+    </style>
+    <script crossorigin="anonymous" integrity="sha384-KcyRSlC9FQog/lJsT+QA8AUIFBgnwKM7bxm7/YaX+NTr4D00npYawrX0h+oXI3a2"
+                src="https://lib.baomitu.com/jquery/1.12.4/jquery.js"></script>
+    <script src="huitailang.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <!--    游戏开始界面-->
+    <h1 class="score">0</h1>
+    <div class="progress"></div>
+    <button class="start">开始游戏</button>
+    <p class="rules"><a href="#">游戏规则</a></p>
+
+    <!--    游戏规则界面-->
+    <div class="rule">
+        <p>游戏规则：</p>
+        <p>1.游戏时间:60s</p>
+        <p>2.拼手速,殴打灰太狼+10分</p>
+        <p>3.殴打小灰灰-10分</p>
+        <a href="#" class="close">[关闭]</a>
+    </div>
+
+    <!--    游戏结束界面-->
+    <div class="mask">
+        <h1>GAME OVER</h1>
+        <button class="reStart">重新开始</button>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
